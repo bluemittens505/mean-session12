@@ -1,6 +1,22 @@
 @import url(icons/icons.data.svg.css);
 
-.comp {padding-left:20px;}
+.comp {padding-left:30px;}
+
+.btn-logout {
+	padding: 0.5rem;
+	border-radius: 6px;
+	border: 2px solid #fff;
+	font-size: 1rem;
+	background-color: #be4c39;
+	color: #fff;
+	margin-left: 12rem;
+}
+
+.welcome {
+	color: #fff;
+	font-size: 1.5rem;
+	padding: 1rem;
+}
 
 // .comp:before {
 // 	content: "";

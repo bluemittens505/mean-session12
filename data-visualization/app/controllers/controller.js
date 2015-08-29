@@ -1,8 +1,25 @@
 app.controller('graphController', 
-    function($scope, $firebaseArray, FIREBASE_URL){
+    function($scope, $firebaseArray, FIREBASE_URL, $firebaseAuth, Authentication){
+
+  // $scope.firstname = "Dawg";
 
 var ref = new Firebase(FIREBASE_URL + '/data');
 $scope.graphData = $firebaseArray(ref);
+
+
+    var auth = $firebaseAuth(ref);
+
+    auth.$onAuth(function(authData){
+        if(authData !== null) {
+            var userDataRef = new Firebase(FIREBASE_URL + '/users');
+            userDataRef.orderByChild("email").equalTo(authData.password.email).on("child_added", function(snapshot) {
+                $scope.firstname = snapshot.val().firstname;
+                // apply not normally done, but needed here because outside
+                // it's digest loop  ???
+                $scope.$apply();
+            });
+        }
+    })
 
     $scope.width = 600;
     $scope.height = 400;

@@ -27,6 +27,12 @@
         <textarea name="description" placeholder="description" ng-required="true" ng-model="adding_portfolio.description"></textarea>
         <p class="error" ng-show="add_portfolio.description.$invalid && add_portfolio.description.$touched">Must enter a description.</p>
         
+        <input name="name" type="text" placeholder="short name"
+        ng-required="true"
+        ng-model="adding_portfolio.name" />
+
+        <input type="file" id="file-upload" ng-click="addImage()" />
+
         <button class="btn btn-success" ng-disabled="add_portfolio.$invalid" type="button" ng-click="addPortfolio( adding_portfolio )">Add Portfolio</button>
       </form>
     </header>

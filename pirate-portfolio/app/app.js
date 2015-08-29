@@ -1,6 +1,7 @@
-var portfolioApp = angular.module('portfolioApp',['ngRoute']);
+var portfolioApp = angular.module('portfolioApp',['ngRoute', 'firebase'])
+.constant('FIREBASE_URL', 'https://pirate-portfolio.firebaseio.com');
 
-var PortfolioListController = angular.module('PortfolioListController', []);
+// var PortfolioListController = angular.module('PortfolioListController', []);
 
 portfolioApp.config(['$routeProvider',
 	function($routeProvider){

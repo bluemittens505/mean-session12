@@ -1,4 +1,5 @@
 <h2><a ng-href="#/">Booty Chart</a></h2>
-<a class="icon-graph comp" ng-href="#/graph">graph</a>
-<a ng-href="#/login">login</a>
-<a ng-href="#/register">register</a>
+<a ng-show="firstname" class="icon-graph comp" ng-href="#/graph">graph</a>
+<a ng-hide="firstname" ng-href="#/login">login</a>
+<a ng-hide="firstname" ng-href="#/register">register</a>
+<button ng-show="firstname" class="btn-logout" ng-click="logout()">Logout</button>
